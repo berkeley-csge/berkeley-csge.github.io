@@ -1,9 +1,9 @@
 .PHONY: build test
 deploy:
-	git checkout gh-pages && \
-	git subtree push --prefix build origin gh-pages; \
-	git checkout master
+	cp CNAME build && \
+	git push -d origin gh-pages || true && \
+	git subtree push --prefix build origin gh-pages
 build:
-	bundle exec jekyll build
+	bundle exec jekyll docs
 test:
 	bundle exec jekyll serve --watch
