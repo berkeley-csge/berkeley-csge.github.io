@@ -4,7 +4,7 @@ title: Seminars
 ---
 
 <div class="row">
-    {% assign seminars = site.data.seminar | sort: "date" %} 
+    {% assign seminars = site.data.seminar | sort: "date" | reverse %} 
     {% for seminar in seminars %}
         <h2>{{ seminar.title }}</h2>
         <h3>Speaker: {{ seminar.speaker }} </h3>
